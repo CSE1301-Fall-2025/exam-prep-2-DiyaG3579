@@ -12,8 +12,21 @@ public class Q04 {
 	and fill it by reading doubles from the Scanner in parameter. The method should then return the filled
 	array.
 	 */
-	public static double[] fillDoubleArray (int n, Scanner in) {
-		return null; //fix me
+	public static double[] fillDoubleArray (int n, Scanner in, int i, double [] x) {
+		if (i == n){
+			return x;
+		}
+		System.out.println("What x coordinate would you like");
+		x[i] = in.nextDouble();
+		return fillDoubleArray(n, in, i+1, x);
+	}
+	public static double [] fillDoubleArrayY (int n, Scanner in, int i, double [] y){
+			if (i == n){
+			return y;
+		}
+		System.out.println("What y coordinate would you like");
+		y[i] = in.nextDouble();
+		return fillDoubleArray(n, in, i+1, y);
 	}
 
 	/*
@@ -23,8 +36,19 @@ public class Q04 {
 	started for you:
 	 */
 	public static void main ( String[] args ) {
-		Scanner in = new Scanner ( System .in );
-		//use StdDraw.polygon and fillDoubleArray
+		Scanner in = new Scanner (System .in);
+		System.out.println("How many sides would you like your polygon to have?");
+		int sides = in.nextInt();
+		int i = 0;
+		double [] x = new double [sides];
+		double [] y = new double [sides];
+		fillDoubleArray(sides,in, i, x);
+		fillDoubleArrayY(sides, in, i, y);
+		//System.out.println("Would you like it filled or unfilled");
+		//String ans = in.next();
+		//System.out.println(ans);
+		StdDraw.setPenColor(107, 117, 220);
+		StdDraw.filledPolygon(x,y);		
 	}
 
 }

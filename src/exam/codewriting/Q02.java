@@ -12,12 +12,18 @@ public class Q02 {
 	* @param x is the x coordinate for the dashed line
 	*
 	**/
-	public static void dashedLine(double x) {
-		
+	public static void dashedLine(double x, double y) {
+		if (y >= 1.0){
+			return;
+		}
+		StdDraw.line(x, y, x, y+0.02);
+		dashedLine(x, y + 0.04);
 	}
 
 	public static void main(String[] args) {
-		dashedLine(0.25);
+		double x = 0.25;
+		double y = 0.0;
+		dashedLine(x,y);
 	}
 
 }

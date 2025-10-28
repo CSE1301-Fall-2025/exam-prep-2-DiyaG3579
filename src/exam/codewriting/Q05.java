@@ -1,8 +1,8 @@
 package exam.codewriting;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
-import edu.princeton.cs.introcs.StdDraw;
+//import edu.princeton.cs.introcs.StdDraw;
 
 public class Q05 {
 
@@ -18,13 +18,25 @@ public class Q05 {
 	appropriately. It is not necessary to use recursion for this problem. Complete the method below:
 	*/
 	public static int countValue (int[] a, int findMe ) {
-		return 0; //fix me
+		int i = 0;
+		int count = 0;
+		return countValueHelper(a, findMe, i, count);
+	}
+
+	public static int countValueHelper(int [] a, int findMe, int i, int count){
+		if (i == a.length){
+			return count;
+		}
+		if (a[i] == findMe){
+			count++;
+		}
+		return countValueHelper(a, findMe, i+1, count);
 	}
 
 
 	public static void main ( String[] args ) {
-		int[] a = {1, 3, 1};
-		System.out.println(countValue(a, 1));
+		int[] a = {1, 3, 1, 2, 1};
+		System.out.println(countValue(a, 3));
 	}
 
 }

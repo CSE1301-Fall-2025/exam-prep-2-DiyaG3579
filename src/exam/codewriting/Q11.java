@@ -1,8 +1,8 @@
 package exam.codewriting;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
-import edu.princeton.cs.introcs.StdDraw;
+//import edu.princeton.cs.introcs.StdDraw;
 
 public class Q11 {
 
@@ -21,7 +21,18 @@ public class Q11 {
 
 	 */
 	public static int sumEvens(int[] a) {
-		return 0; //fix me
+		int i = 0;
+		int sum = 0;
+		return sumEvensHelper(a, i, sum);
+	}
+	public static int sumEvensHelper(int [] a, int i, int sum){
+		if (i >= a.length){
+			return sum;
+		}
+		if (a[i] % 2 == 0){
+			sum = sum + a[i];
+		}
+		return sumEvensHelper(a, i + 1, sum);
 	}
 
 	public static void main ( String[] args ) {

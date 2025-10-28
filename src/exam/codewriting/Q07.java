@@ -1,8 +1,8 @@
 package exam.codewriting;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
-import edu.princeton.cs.introcs.StdDraw;
+//import edu.princeton.cs.introcs.StdDraw;
 
 public class Q07 {
 
@@ -14,13 +14,18 @@ public class Q07 {
 	Complete the method. You may use either iteration or recursion.
 	*/
 	
-	public static int rollingSum (int n ) {
-		return 0; //fix me
+	public static int rollingSum (int n, int sum) {
+		if (n == 0){
+			return sum;
+		}
+		sum = sum + n;
+		return rollingSum(n-1, sum);
 	}
 	
 	public static void main ( String[] args ) {
-		System.out.println(rollingSum(5)); //should be 15
-		System.out.println(rollingSum(3)); //should be 6
+		int sum = 0;
+		System.out.println(rollingSum(5, sum)); //should be 15
+		System.out.println(rollingSum(3, sum)); //should be 6
 	}
 
 }

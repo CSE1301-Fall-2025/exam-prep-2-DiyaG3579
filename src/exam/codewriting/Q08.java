@@ -1,8 +1,8 @@
 package exam.codewriting;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
-import edu.princeton.cs.introcs.StdDraw;
+//import edu.princeton.cs.introcs.StdDraw;
 
 public class Q08 {
 
@@ -24,7 +24,20 @@ public class Q08 {
 	 */
 
 	public static int[] countValues (int[][] a, int findMe ) {
-		return new int[0]; //fix me
+		int [] c = new int [a[0].length];
+		return countValuesHelper(a, findMe, c);
+	}
+	public static int [] countValuesHelper(int [][] a, int findMe, int [] c){
+		for (int j = 0; j < a[0].length; j++){
+			int count = 0;
+			for (int i = 0; i < a.length; i++){
+				if (a[i][j] == findMe){
+					count++;
+				}
+				c[j] = count;
+			}
+		}
+		return c;
 	}
 
 	public static void main ( String[] args ) {

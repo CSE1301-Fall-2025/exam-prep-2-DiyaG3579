@@ -1,8 +1,8 @@
 package exam.codewriting;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
-import edu.princeton.cs.introcs.StdDraw;
+//import edu.princeton.cs.introcs.StdDraw;
 
 public class Q10 {
 
@@ -15,13 +15,17 @@ public class Q10 {
 
 	Complete the method. You may use either iteration or recursion.
 	 */
-	public static int repeat (String text, int n) {
-		return 0; //fix me
+	public static String repeat (String text, int n) {
+		String String = "";
+		for (int i = 0; i < n; i++){
+			String = String + text;
+		}
+		return String; //fix me
 	}
 
 	public static void main ( String[] args ) {
-		repeat("hi", 5);
-		repeat("bye", 3);
+		System.out.println(repeat("hi", 5));
+		System.out.println(repeat("bye", 3));
 	}
 
 }
