@@ -22,7 +22,7 @@ public class Q01 {
 		//Your solution must use recursion
 
 		double halfCarpetLength = 0.25 ;
-		recursiveCarpet ( 0.5 , 0.5 , halfCarpetLength ) ;
+		recursiveCarpet ( 0.5 , 0.5 , halfCarpetLength) ;
 	}
 
 }
