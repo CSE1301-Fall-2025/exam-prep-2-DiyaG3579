@@ -26,7 +26,7 @@ public class Q04 {
 		}
 		System.out.println("What y coordinate would you like");
 		y[i] = in.nextDouble();
-		return fillDoubleArray(n, in, i+1, y);
+		return fillDoubleArrayY(n, in, i+1, y);
 	}
 
 	/*
@@ -44,11 +44,16 @@ public class Q04 {
 		double [] y = new double [sides];
 		fillDoubleArray(sides,in, i, x);
 		fillDoubleArrayY(sides, in, i, y);
-		//System.out.println("Would you like it filled or unfilled");
-		//String ans = in.next();
-		//System.out.println(ans);
+		System.out.println("Would you like it filled");
+		Boolean ans = in.nextBoolean();		
+		System.out.println(ans);
 		StdDraw.setPenColor(107, 117, 220);
-		StdDraw.filledPolygon(x,y);		
+		if (ans = true){
+			StdDraw.filledPolygon(x,y);
+		}
+		else{
+			StdDraw.polygon(x,y);
+		}
 	}
 
 }
